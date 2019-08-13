@@ -48,9 +48,19 @@ export const updateCartQuantity = (product, quantity) => ({
 export const removeCart = (product) =>({
     type:ActionTypes.CART_REMOVE,
     payload:product
-})
+});
 
 export const clearCart = () =>({
     type:ActionTypes.CART_CLEAR
+});
+
+export const placeOrder =  (order) => ({
+    type:ActionTypes.placeOrder,
+    payload:dataSource.StoreData(DataTypes.ORDERS, order).then(response => 
+        ({
+            dataType: DataTypes.ORDERS,
+            data:response.data
+        }))
 })
+
 
