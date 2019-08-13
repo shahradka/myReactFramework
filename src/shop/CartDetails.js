@@ -8,7 +8,6 @@ export class CartDetails extends Component{
     ${this.props.cartItems === 0 ? "disabled": ""}`;
 
     render() {
-        console.log(this.props);
         return <div className="m-3">
             <h2 className="text-center">Your Cart</h2>
             <table className="table table-bordered table-striped">
