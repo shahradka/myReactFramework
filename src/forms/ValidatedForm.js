@@ -19,7 +19,7 @@ export class ValidatedForm extends Component
             Object.values(this.formElements).forEach(elm => {
                 if(!elm.checkValidity())
                 {
-                    newState = ValidationErrors[elm.name] = GetMessages(elm);
+                    newState.ValidationErrors[elm.name] = GetMessages(elm);
                 }
             })
             return newState;
