@@ -17,6 +17,8 @@ const queryResolvers = require("./serverQueriesResolver");
 
 const mutationResolvers = require("./serverMutationResolver")
 
+const auth = require("./authMiddleware");
+
 
 
 const fileName = process.argv[2] || "./data.js"
@@ -71,7 +73,10 @@ app.use(jsonServer.bodyParser)
 
 app.use("/api", (req, resp, next) => router(req, resp, next));
 
+app.use(auth);
+
 app.use("/graphql", (req, resp, next) => graph(req, resp, next));
+
 
 
 
